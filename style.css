@@ -151,6 +151,13 @@ body .wrapper .form-wrapper .login-button {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+body .wrapper .form-wrapper .login-button:hover {
+  background: #78d6aa;
 }
 
 @media screen and (min-width: 768px) {
@@ -211,7 +218,7 @@ body .wrapper .datas .datas-title {
 
 body .wrapper .datas .datas-wrapper {
   width: 100%;
-  background: rgba(250, 250, 250, 0.15);
+  background: rgba(250, 250, 250, 0.95);
   border-radius: 12px;
   padding: 20px;
 }
@@ -224,45 +231,91 @@ body .wrapper .datas .datas-wrapper .datas-row {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 24px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row:nth-of-type(5) {
+  margin-bottom: 0;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row.email:before {
+  background: url(./images/email.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row.password:before {
+  background: url(./images/password.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row.source:before {
+  background: url(./images/source.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row.date:before {
+  background: url(./images/calendar.svg);
+  background-position: center;
+  background-size: cover;
 }
 
 body .wrapper .datas .datas-wrapper .datas-row-name, body .wrapper .datas .datas-wrapper .datas-row-value {
   margin-top: 0;
-  margin-bottom: 12px;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
+  color: #0f1123;
 }
 
 body .wrapper .datas .datas-wrapper .datas-row-name {
   min-width: 100px;
   text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 body .wrapper .datas .datas-wrapper .datas-row-name.leak {
   margin-bottom: 4px;
 }
 
-body .wrapper .datas .datas-wrapper .datas-row-value.important {
-  font-size: 18px;
+body .wrapper .datas .datas-wrapper .datas-row-value {
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 1px;
-}
-
-body .wrapper .datas .datas-wrapper .datas-row-value.leak {
-  font-size: 15px;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
+  body .wrapper .datas .datas-wrapper {
+    padding: 32px;
+  }
   body .wrapper .datas .datas-wrapper .datas-row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    padding-left: 48px;
+  }
+  body .wrapper .datas .datas-wrapper .datas-row:before {
+    width: 32px;
+    height: 32px;
+  }
+  body .wrapper .datas .datas-wrapper .datas-row-name, body .wrapper .datas .datas-wrapper .datas-row-value {
+    color: #0f1123;
   }
   body .wrapper .datas .datas-wrapper .datas-row-name {
-    margin-right: 20px;
-    text-align: right;
+    font-size: 18px;
+  }
+  body .wrapper .datas .datas-wrapper .datas-row-value {
+    font-size: 14px;
   }
 }
 /*# sourceMappingURL=style.css.map */

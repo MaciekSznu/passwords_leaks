@@ -6,6 +6,7 @@ $text-light-color: #fafafa;
 $placeholder-color: #a98b98;
 $background-color: #4e3d53;
 $button-color: #a6f0c6;
+$button-color-hover: #78d6aa;
 
 html {
   box-sizing: border-box;
@@ -99,6 +100,12 @@ body {
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 1px;
+        cursor: pointer;
+        transition: background 0.5s;
+
+        &:hover {
+          background: $button-color-hover;
+        }
       }
 
       @media screen and (min-width: 768px) {
@@ -151,27 +158,75 @@ body {
 
       .datas-wrapper {
         width: 100%;
-        background: rgba($text-light-color, 0.15);
+        background: rgba($text-light-color, 0.95);
         border-radius: 12px;
         padding: 20px;
 
         .datas-row {
           display: flex;
           flex-direction: column;
-          // margin-bottom: 8px;
+          position: relative;
+          padding-left: 40px;
+          margin-bottom: 24px;
+
+          &:nth-of-type(5) {
+            margin-bottom: 0;
+          }
+
+          &:before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 28px;
+            height: 28px;
+          }
+
+          &.email {
+            &:before {
+              background: url(./images/email.svg);
+              background-position: center;
+              background-size: cover;
+            }
+          }
+
+          &.password {
+            &:before {
+              background: url(./images/password.svg);
+              background-position: center;
+              background-size: cover;
+            }
+          }
+
+          &.source {
+            &:before {
+              background: url(./images/source.svg);
+              background-position: center;
+              background-size: cover;
+            }
+          }
+
+          &.date {
+            &:before {
+              background: url(./images/calendar.svg);
+              background-position: center;
+              background-size: cover;
+            }
+          }
 
           &-name,
           &-value {
             margin-top: 0;
-            margin-bottom: 12px;
             font-family: $base-font;
-            font-weight: 300;
-            font-size: 16px;
+            color: $text-color;
           }
 
           &-name {
             min-width: 100px;
             text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
 
             &.leak {
               margin-bottom: 4px;
@@ -179,25 +234,34 @@ body {
           }
 
           &-value {
-            &.important {
-              font-size: 18px;
-              font-weight: 400;
-              letter-spacing: 1px;
-            }
-
-            &.leak {
-              font-size: 15px;
-            }
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 0;
           }
         }
 
         @media screen and (min-width: 768px) {
+          padding: 32px;
+
           .datas-row {
-            flex-direction: row;
+            padding-left: 48px;
+
+            &:before {
+              width: 32px;
+              height: 32px;
+            }
+
+            &-name,
+            &-value {
+              color: $text-color;
+            }
 
             &-name {
-              margin-right: 20px;
-              text-align: right;
+              font-size: 18px;
+            }
+
+            &-value {
+              font-size: 14px;
             }
           }
         }
