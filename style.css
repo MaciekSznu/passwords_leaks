@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background: #f5f5f5;
+  height: auto;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #0f1123;
+}
+
+body .wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50vh auto;
+      grid-template-rows: 50vh auto;
+      grid-template-areas: "form" "content";
+}
+
+@media screen and (min-width: 768px) {
+  body .wrapper {
+    -ms-grid-rows: unset;
+        grid-template-rows: unset;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "form content";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .wrapper {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+body .wrapper .form-wrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: form;
+  height: 100%;
+  background: rgba(78, 61, 83, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .wrapper .form-wrapper .form-title {
+  min-width: 240px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+body .wrapper .form-wrapper .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .wrapper .form-wrapper .form .login,
+body .wrapper .form-wrapper .form .password {
+  padding: 10px;
+  margin-bottom: 16px;
+  background: #f5f5f5;
+  border: 1px solid #4e3d53;
+  border-radius: 4px;
+  min-width: 240px;
+}
+
+body .wrapper .form-wrapper .form .login::-webkit-input-placeholder,
+body .wrapper .form-wrapper .form .password::-webkit-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #a98b98;
+}
+
+body .wrapper .form-wrapper .form .login:-ms-input-placeholder,
+body .wrapper .form-wrapper .form .password:-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #a98b98;
+}
+
+body .wrapper .form-wrapper .form .login::-ms-input-placeholder,
+body .wrapper .form-wrapper .form .password::-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #a98b98;
+}
+
+body .wrapper .form-wrapper .form .login::placeholder,
+body .wrapper .form-wrapper .form .password::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #a98b98;
+}
+
+body .wrapper .form-wrapper .login-button {
+  padding: 10px;
+  background: #a6f0c6;
+  border: none;
+  border-radius: 4px;
+  min-width: 240px;
+  color: #fafafa;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 768px) {
+  body .wrapper .form-wrapper .form-title {
+    min-width: 260px;
+  }
+  body .wrapper .form-wrapper .form .login,
+  body .wrapper .form-wrapper .form .password {
+    min-width: 260px;
+  }
+  body .wrapper .form-wrapper .login-button {
+    min-width: 260px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .wrapper .form-wrapper .form-title {
+    min-width: 320px;
+  }
+  body .wrapper .form-wrapper .form .login,
+  body .wrapper .form-wrapper .form .password {
+    min-width: 320px;
+  }
+  body .wrapper .form-wrapper .login-button {
+    min-width: 320px;
+  }
+}
+
+body .wrapper .datas {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: content;
+  background: #4e3d53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fafafa;
+  padding: 32px;
+}
+
+body .wrapper .datas .datas-title {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+body .wrapper .datas .datas-wrapper {
+  width: 100%;
+  background: rgba(250, 250, 250, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row-name, body .wrapper .datas .datas-wrapper .datas-row-value {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row-name {
+  min-width: 100px;
+  text-align: left;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row-name.leak {
+  margin-bottom: 4px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row-value.important {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+body .wrapper .datas .datas-wrapper .datas-row-value.leak {
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  body .wrapper .datas .datas-wrapper .datas-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body .wrapper .datas .datas-wrapper .datas-row-name {
+    margin-right: 20px;
+    text-align: right;
+  }
+}
+/*# sourceMappingURL=style.css.map */
