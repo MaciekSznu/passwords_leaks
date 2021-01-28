@@ -198,6 +198,8 @@ body .wrapper .form-wrapper .login-button {
   cursor: pointer;
   -webkit-transition: background 0.5s;
   transition: background 0.5s;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
 }
 
 body .wrapper .form-wrapper .login-button:hover {
@@ -294,6 +296,8 @@ body .wrapper .datas .datas-wrapper .datas-row:before {
   width: 34px;
   height: 34px;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
 }
 
 body .wrapper .datas .datas-wrapper .datas-row.email:before {
@@ -315,7 +319,7 @@ body .wrapper .datas .datas-wrapper .datas-row.source:before {
 }
 
 body .wrapper .datas .datas-wrapper .datas-row.date:before {
-  background: url(./images/clock.svg);
+  background: url(./images/clock-icon.svg);
   background-position: center;
   background-size: cover;
 }

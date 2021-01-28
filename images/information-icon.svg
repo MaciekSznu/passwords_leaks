@@ -14,8 +14,8 @@
       }
     </style>
     <linearGradient id="a" x1="10043" x2="-898.9" y1="6303" y2="2841" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#48CFAE" offset="0" />
-      <stop stop-color="#4FC0E8" offset="1" />
+      <stop stop-color="#a98b98" offset="0" />
+      <stop stop-color="#4e3d53" offset="1" />
     </linearGradient>
   </defs>
   <polygon class="fil0" points="0 0 9144 0 9144 9144 0 9144" />

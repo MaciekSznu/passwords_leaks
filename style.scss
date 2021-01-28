@@ -8,6 +8,11 @@ $background-color: #4e3d53;
 $button-color: #a6f0c6;
 $button-color-hover: #78d6aa;
 
+@mixin icon-box-shadow {
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -147,6 +152,7 @@ body {
         letter-spacing: 1px;
         cursor: pointer;
         transition: background 0.5s;
+        @include icon-box-shadow;
 
         &:hover {
           background: $button-color-hover;
@@ -228,6 +234,7 @@ body {
             width: 34px;
             height: 34px;
             border-radius: 3px;
+            @include icon-box-shadow;
           }
 
           &.email {
@@ -256,7 +263,7 @@ body {
 
           &.date {
             &:before {
-              background: url(./images/clock.svg);
+              background: url(./images/clock-icon.svg);
               background-position: center;
               background-size: cover;
             }
