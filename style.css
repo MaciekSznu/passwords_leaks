@@ -37,18 +37,18 @@ body .wrapper {
   background: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: minmax(50vh auto) auto;
-      grid-template-rows: minmax(50vh auto) auto;
-      grid-template-areas: "form" "content";
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: "title" "form" "content";
 }
 
 @media screen and (min-width: 768px) {
   body .wrapper {
-    -ms-grid-rows: unset;
-        grid-template-rows: unset;
+    -ms-grid-rows: 250px auto;
+        grid-template-rows: 250px auto;
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
-        grid-template-areas: "form content";
+        grid-template-areas: "title title" "form content";
   }
 }
 
@@ -59,8 +59,88 @@ body .wrapper {
   }
 }
 
-body .wrapper .form-wrapper {
+body .wrapper .section-title-wrapper {
   -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  background: #4e3d53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  padding: 32px;
+}
+
+body .wrapper .section-title-wrapper .section-title {
+  width: 280px;
+  min-width: 280px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+body .wrapper .section-title-wrapper .section-title.small {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+body .wrapper .section-title-wrapper .section-title.small span {
+  font-weight: 500;
+}
+
+body .wrapper .section-title-wrapper .section-title.big {
+  font-size: 22px;
+  letter-spacing: 0.25px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+body .wrapper .section-title-wrapper .section-title.big {
+  text-align: center;
+}
+
+body .wrapper .section-title-wrapper .section-title.small {
+  text-align: center;
+}
+
+body .wrapper .section-title-wrapper .section-title.small span {
+  display: block;
+  font-size: 18px;
+  margin: 6px auto;
+}
+
+@media screen and (min-width: 768px) {
+  body .wrapper .section-title-wrapper .section-title {
+    width: 80%;
+  }
+  body .wrapper .section-title-wrapper .section-title.big {
+    padding-top: 0;
+    font-size: 32px;
+  }
+  body .wrapper .section-title-wrapper .section-title.small {
+    font-size: 18px;
+  }
+  body .wrapper .section-title-wrapper .section-title.small span {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+body .wrapper .form-wrapper {
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: form;
   height: 100%;
@@ -78,6 +158,7 @@ body .wrapper .form-wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 32px 20px;
 }
 
 body .wrapper .form-wrapper .form-title {
@@ -104,7 +185,7 @@ body .wrapper .form-wrapper .form-title.big {
   font-size: 22px;
   letter-spacing: 0.25px;
   font-weight: 600;
-  margin: 16px 0 8px;
+  margin: 8px 0;
 }
 
 body .wrapper .form-wrapper .form-description {
@@ -207,6 +288,12 @@ body .wrapper .form-wrapper .login-button:hover {
 }
 
 @media screen and (min-width: 768px) {
+  body .wrapper .form-wrapper {
+    padding-top: 40px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   body .wrapper .form-wrapper .form-title,
   body .wrapper .form-wrapper .form-description {
     min-width: 280px;
@@ -235,7 +322,7 @@ body .wrapper .form-wrapper .login-button:hover {
 }
 
 body .wrapper .datas {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: content;
   background: #4e3d53;
@@ -253,13 +340,14 @@ body .wrapper .datas {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fafafa;
-  padding: 32px;
+  padding: 32px 20px;
 }
 
 body .wrapper .datas .datas-title {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 22px;
+  margin: 20px 0;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
@@ -368,6 +456,15 @@ body .wrapper .datas .datas-wrapper .datas-row-value.leak {
   }
   body .wrapper .datas .datas-wrapper .datas-row-value {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .wrapper .datas {
+    padding-top: 40px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 /*# sourceMappingURL=style.css.map */

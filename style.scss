@@ -13,6 +13,33 @@ $button-color-hover: #78d6aa;
   box-shadow: 2px 2px 5px 1px rgba(15, 17, 35, 0.5);
 }
 
+@mixin form-title {
+  width: 280px;
+  min-width: 280px;
+  font-family: $base-font;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+
+  &.small {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: 400;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &.big {
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    font-weight: 600;
+    margin: 8px 0;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -40,20 +67,69 @@ body {
     min-height: 100%;
     background: white;
     display: grid;
-    grid-template-rows: minmax(50vh auto) auto;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
+      "title"
       "form"
       "content";
 
     @media screen and (min-width: 768px) {
-      grid-template-rows: unset;
+      grid-template-rows: 250px auto;
       grid-template-columns: 50% 50%;
-      grid-template-areas: "form content";
+      grid-template-areas:
+        "title title"
+        "form content";
     }
 
     @media screen and (min-width: 1024px) {
       width: 80%;
       height: 80%;
+    }
+
+    .section-title-wrapper {
+      grid-area: title;
+      background: rgba($background-color, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 32px;
+      .section-title {
+        @include form-title;
+
+        &.big {
+          text-align: center;
+        }
+
+        &.small {
+          text-align: center;
+          span {
+            display: block;
+            font-size: 18px;
+            margin: 6px auto;
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .section-title {
+          width: 80%;
+
+          &.big {
+            padding-top: 0;
+            font-size: 32px;
+          }
+
+          &.small {
+            font-size: 18px;
+            span {
+              display: inline-block;
+              font-size: 20px;
+            }
+          }
+        }
+      }
     }
 
     .form-wrapper {
@@ -64,32 +140,10 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 32px 20px;
 
       .form-title {
-        width: 280px;
-        min-width: 280px;
-        font-family: $base-font;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        margin-bottom: 8px;
-
-        &.small {
-          font-size: 16px;
-          margin-bottom: 0;
-          font-weight: 400;
-
-          span {
-            font-weight: 500;
-          }
-        }
-
-        &.big {
-          font-size: 22px;
-          letter-spacing: 0.25px;
-          font-weight: 600;
-          margin: 16px 0 8px;
-        }
+        @include form-title;
       }
 
       .form-description {
@@ -160,6 +214,8 @@ body {
       }
 
       @media screen and (min-width: 768px) {
+        padding-top: 40px;
+        justify-content: flex-start;
         .form-title,
         .form-description {
           min-width: 280px;
@@ -199,12 +255,13 @@ body {
       align-items: center;
       justify-content: center;
       color: $text-light-color;
-      padding: 32px;
+      padding: 32px 20px;
 
       .datas-title {
         width: 100%;
         font-family: $base-font;
         font-size: 22px;
+        margin: 20px 0;
         font-weight: 400;
         letter-spacing: 0.5px;
       }
@@ -327,6 +384,11 @@ body {
             }
           }
         }
+      }
+
+      @media screen and (min-width: 768px) {
+        padding-top: 40px;
+        justify-content: flex-start;
       }
     }
   }
